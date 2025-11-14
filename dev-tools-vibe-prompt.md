@@ -1,9 +1,11 @@
 # DevFlow: All-in-One Developer Utilities Platform
+
 ## Comprehensive Vibe Coding Prompt
 
 ---
 
 ## 🎯 PERSONA & CONTEXT
+
 You are an **Expert Full-Stack React Native & Next.js Developer** building an **industry-standard, production-ready Developer Utilities Platform** called **DevFlow**. You understand developer pain points, prioritize UX excellence, and follow modern best practices for performance, accessibility, and maintainability. You're building for developers who need 50+ daily-use utilities in a single, beautiful, fast platform with **zero data privacy concerns** (works entirely offline).
 
 ---
@@ -11,7 +13,9 @@ You are an **Expert Full-Stack React Native & Next.js Developer** building an **
 ## 📋 PROJECT REQUIREMENTS
 
 ### 1. **Core Vision**
+
 Build a **web-based, beautiful, and performant** all-in-one developer toolkit that consolidates utilities from:
+
 - DevUtils (macOS native polish, 47+ tools, smart detection)
 - DevToys (Windows breadth, SQL formatting, cron parsing)
 - TrueDevTools (web accessibility, cross-platform)
@@ -24,6 +28,7 @@ Build a **web-based, beautiful, and performant** all-in-one developer toolkit th
 ## 🛠️ **TECH STACK & ARCHITECTURE**
 
 ### Frontend Stack
+
 - **Framework**: Next.js 14+ (App Router, Server Components, Server Actions)
 - **UI Library**: React Bits (for animated, beautiful components)
 - **Styling**: Tailwind CSS v4 + CSS Modules
@@ -35,6 +40,7 @@ Build a **web-based, beautiful, and performant** all-in-one developer toolkit th
 - **Accessibility**: headless UI, Radix UI for primitives, ARIA compliance
 
 ### Development Tools
+
 - **Language**: TypeScript (strict mode)
 - **Linting**: ESLint + Prettier
 - **Testing**: Vitest + React Testing Library
@@ -43,6 +49,7 @@ Build a **web-based, beautiful, and performant** all-in-one developer toolkit th
 - **Package Manager**: npm/pnpm
 
 ### Deployment & CI/CD
+
 - **Platform**: Vercel (auto-deploy on git push)
 - **Environment**: Node.js 20+
 - **Database**: None (client-side only, offline-first)
@@ -53,6 +60,7 @@ Build a **web-based, beautiful, and performant** all-in-one developer toolkit th
 ## 🎨 **UI/UX SPECIFICATIONS**
 
 ### Design Philosophy
+
 - **Minimalist, Dark-First UI** (light mode as secondary option)
 - **Microinteractions**: Smooth transitions, hover feedback, loading states
 - **Responsive**: Mobile-first, works on all devices
@@ -60,6 +68,7 @@ Build a **web-based, beautiful, and performant** all-in-one developer toolkit th
 - **Performance**: Sub-1s initial load, smooth 60fps animations
 
 ### Layout Structure
+
 ```
 ┌─────────────────────────────────────────┐
 │ Header: Logo | Search Bar | Theme Toggle│
@@ -74,6 +83,7 @@ Build a **web-based, beautiful, and performant** all-in-one developer toolkit th
 ```
 
 ### Core Features
+
 1. **Smart Tool Auto-Detection**: Paste → Auto-detect tool (JSON, UUID, Base64, etc.)
 2. **Search & Filter**: Real-time tool search with keyboard shortcuts (Cmd+K)
 3. **Favorites & Recent**: Quick access to commonly used tools
@@ -88,6 +98,7 @@ Build a **web-based, beautiful, and performant** all-in-one developer toolkit th
 ## 🔧 **MUST-HAVE TOOLS (50+ Utilities)**
 
 ### Encoders/Decoders (10 tools)
+
 - Base64 Encode/Decode
 - URL Encode/Decode
 - HTML Entities Encode/Decode
@@ -100,6 +111,7 @@ Build a **web-based, beautiful, and performant** all-in-one developer toolkit th
 - Percent Encode/Decode
 
 ### Converters (12 tools)
+
 - JSON ↔ YAML
 - JSON ↔ CSV
 - JSON ↔ XML
@@ -111,6 +123,7 @@ Build a **web-based, beautiful, and performant** all-in-one developer toolkit th
 - CSS ↔ SCSS
 
 ### Formatters & Validators (15 tools)
+
 - JSON Formatter & Validator
 - XML Formatter
 - SQL Formatter & Beautifier
@@ -125,6 +138,7 @@ Build a **web-based, beautiful, and performant** all-in-one developer toolkit th
 - GraphQL Formatter
 
 ### Generators & Utilities (13+ tools)
+
 - UUID/GUID Generator
 - Nano ID Generator
 - QR Code Generator
@@ -206,6 +220,7 @@ dev-flow/
 ## 💡 **IMPLEMENTATION STRATEGY**
 
 ### Phase 1: Foundation (Week 1)
+
 - [ ] Set up Next.js 14 project with App Router
 - [ ] Integrate Tailwind CSS v4 + React Bits framework
 - [ ] Build core layout: Header, Sidebar, Main Content Area
@@ -213,6 +228,7 @@ dev-flow/
 - [ ] Set up TypeScript configuration
 
 ### Phase 2: Core Features (Week 2-3)
+
 - [ ] Build Search Bar with keyboard shortcuts (Cmd+K)
 - [ ] Implement clipboard auto-detection logic
 - [ ] Create tool detection system (JSON, UUID, Base64, etc.)
@@ -220,6 +236,7 @@ dev-flow/
 - [ ] Implement LocalStorage for preferences
 
 ### Phase 3: Tools Implementation (Week 4-6)
+
 - [ ] Build Encoders/Decoders suite (Base64, URL, HTML, etc.)
 - [ ] Build Converters (JSON↔YAML, CSV, XML, etc.)
 - [ ] Build Formatters & Validators (JSON, XML, SQL, Cron)
@@ -227,6 +244,7 @@ dev-flow/
 - [ ] Optimize tool loading with code splitting
 
 ### Phase 4: Polish & Testing (Week 7-8)
+
 - [ ] Add React Bits animated components
 - [ ] Implement accessibility (WCAG 2.1 AA)
 - [ ] Write unit tests (Vitest)
@@ -239,12 +257,14 @@ dev-flow/
 ## 🎯 **VIBE CODING DIRECTIVES**
 
 ### Tone & Approach
+
 - **Conversational & Iterative**: Start with core MVP, refine based on feedback
 - **Developer-Centric**: Think about daily workflows; reduce friction
 - **Beautiful Defaults**: Pre-configured themes, keyboard shortcuts, smart defaults
 - **Fail Gracefully**: Handle edge cases, show helpful error messages
 
 ### Iteration Loop
+
 1. **Build MVP**: Core layout + 5-6 essential tools
 2. **Get Feedback**: "How should copy button behave? Should there be undo?"
 3. **Refine UI**: "Add more visual feedback, make it feel snappy"
@@ -252,6 +272,7 @@ dev-flow/
 5. **Polish**: "Smooth animations, accessibility audit, performance"
 
 ### Success Metrics
+
 - ✅ Sub-500ms tool response time
 - ✅ Lighthouse score 95+
 - ✅ WCAG 2.1 AA compliant
@@ -264,6 +285,7 @@ dev-flow/
 ## 🚀 **VERCEL DEPLOYMENT**
 
 ### Key Optimizations for Vercel
+
 - **Edge Functions**: Use for lightweight tool detection
 - **Incremental Static Regeneration**: Cache tool definitions
 - **Analytics**: Monitor performance metrics
@@ -271,6 +293,7 @@ dev-flow/
 - **Preview Deployments**: Auto-generate for PRs
 
 ### Environment Setup
+
 ```
 # .env.local
 NEXT_PUBLIC_APP_NAME=DevFlow
@@ -303,6 +326,7 @@ NEXT_PUBLIC_VERSION=1.0.0
 ## 🎨 **DESIGN TOKENS & ANIMATION GUIDE**
 
 ### Colors
+
 - **Primary**: Indigo-600 / #4F46E5
 - **Accent**: Cyan-500 / #06B6D4
 - **Background**: Slate-950 / #030712
@@ -310,12 +334,14 @@ NEXT_PUBLIC_VERSION=1.0.0
 - **Border**: Slate-700 / #334155
 
 ### Typography
+
 - **Font Family**: Inter, system-ui
 - **Heading**: Bold, 24px-48px
 - **Body**: Regular, 14px-16px
 - **Code**: Mono (JetBrains Mono / Fira Code), 12px-14px
 
 ### Animations (React Bits Integration)
+
 - **Fade In**: 300ms ease-out
 - **Slide Up**: 400ms ease-out
 - **Scale Pop**: 250ms cubic-bezier(0.16, 1, 0.3, 1)

@@ -80,3 +80,55 @@ export function formatCSS(input: string): string {
     throw new Error('Failed to format CSS')
   }
 }
+
+export function formatSQL(input: string, indent: number = 2): string {
+  try {
+    const PADDING = ' '.repeat(indent)
+
+    // SQL keywords that should be on new lines
+    const keywords = [
+      'SELECT', 'FROM', 'WHERE', 'AND', 'OR', 'ORDER BY', 'GROUP BY',
+      'HAVING', 'INNER JOIN', 'LEFT JOIN', 'RIGHT JOIN', 'FULL JOIN',
+      'JOIN', 'ON', 'LIMIT', 'OFFSET', 'INSERT INTO', 'VALUES',
+      'UPDATE', 'SET', 'DELETE FROM', 'CREATE TABLE', 'DROP TABLE',
+      'ALTER TABLE', 'CASE', 'WHEN', 'THEN', 'ELSE', 'END'
+    ]
+
+    let formatted = input.trim()
+
+    // Normalize whitespace
+    formatted = formatted.replace(/\s+/g, ' ')
+
+    // Add newlines before major keywords
+    keywords.forEach(keyword => {
+      const regex = new RegExp(`\\b${keyword}\\b`, 'gi')
+      formatted = formatted.replace(regex, `\n${keyword}`)
+    })
+
+    // Format commas in SELECT statements
+    formatted = formatted.replace(/,\s*/g, ',\n')
+
+    // Add indentation
+    const lines = formatted.split('\n').filter(line => line.trim())
+    let indentLevel = 0
+    const formattedLines = lines.map(line => {
+      const trimmed = line.trim()
+
+      // Decrease indent for certain keywords
+      if (trimmed.match(/^(WHERE|FROM|JOIN|INNER JOIN|LEFT JOIN|RIGHT JOIN|GROUP BY|ORDER BY|HAVING|LIMIT)/i)) {
+        indentLevel = 1
+      } else if (trimmed.match(/^(SELECT|INSERT|UPDATE|DELETE|CREATE|ALTER|DROP)/i)) {
+        indentLevel = 0
+      } else if (trimmed.match(/^(AND|OR|ON|WHEN|THEN|ELSE)/i)) {
+        indentLevel = 2
+      }
+
+      const padding = PADDING.repeat(Math.max(0, indentLevel))
+      return padding + trimmed
+    })
+
+    return formattedLines.join('\n')
+  } catch (error) {
+    throw new Error(`Failed to format SQL: ${(error as Error).message}`)
+  }
+}

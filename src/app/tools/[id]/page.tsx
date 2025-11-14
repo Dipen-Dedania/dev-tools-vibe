@@ -1,15 +1,7 @@
 import { notFound } from 'next/navigation'
-import { getToolById } from '@/lib/toolRegistry'
+import { getToolById, toolRegistry } from '@/lib/toolRegistry'
 import { MainLayout } from '@/components/layouts/MainLayout'
-import { Base64Tool } from '@/components/tools/Base64Tool'
-import { JSONFormatterTool } from '@/components/tools/JSONFormatterTool'
-import { UUIDGeneratorTool } from '@/components/tools/UUIDGeneratorTool'
-
-const toolComponents: Record<string, React.ComponentType> = {
-  'base64-encoder': Base64Tool,
-  'json-formatter': JSONFormatterTool,
-  'uuid-generator': UUIDGeneratorTool,
-}
+import { toolComponentMap } from '@/lib/toolComponentMap'
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
@@ -36,7 +28,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
     notFound()
   }
 
-  const ToolComponent = toolComponents[id]
+  const ToolComponent = toolComponentMap[id]
 
   if (!ToolComponent) {
     return (
@@ -62,9 +54,5 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
 }
 
 export async function generateStaticParams() {
-  return [
-    { id: 'base64-encoder' },
-    { id: 'json-formatter' },
-    { id: 'uuid-generator' },
-  ]
+  return toolRegistry.map(tool => ({ id: tool.id }))
 }

@@ -1,25 +1,24 @@
 'use client'
 
-import { Moon, Sun } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { Moon, Sun, Monitor } from 'lucide-react'
+import { useTheme } from '@/hooks'
 import { Button } from './Button'
+import { THEME_MODES } from '@/lib/constants'
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark')
+  const { theme, toggleTheme } = useTheme()
 
-  useEffect(() => {
-    const stored = localStorage.getItem('devflow-theme') as 'light' | 'dark' | null
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const initialTheme = stored || (prefersDark ? 'dark' : 'light')
-    setTheme(initialTheme)
-    document.documentElement.classList.toggle('light', initialTheme === 'light')
-  }, [])
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark'
-    setTheme(newTheme)
-    localStorage.setItem('devflow-theme', newTheme)
-    document.documentElement.classList.toggle('light', newTheme === 'light')
+  const getIcon = () => {
+    switch (theme) {
+      case THEME_MODES.LIGHT:
+        return <Sun className="h-5 w-5" />
+      case THEME_MODES.DARK:
+        return <Moon className="h-5 w-5" />
+      case THEME_MODES.SYSTEM:
+        return <Monitor className="h-5 w-5" />
+      default:
+        return <Moon className="h-5 w-5" />
+    }
   }
 
   return (
@@ -29,12 +28,9 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       aria-label="Toggle theme"
       className="w-10 h-10 p-0"
+      title={`Current theme: ${theme}`}
     >
-      {theme === 'dark' ? (
-        <Sun className="h-5 w-5" />
-      ) : (
-        <Moon className="h-5 w-5" />
-      )}
+      {getIcon()}
     </Button>
   )
 }

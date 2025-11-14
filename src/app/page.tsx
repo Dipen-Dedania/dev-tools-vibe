@@ -64,8 +64,8 @@ export default function Home() {
           </h1>
 
           <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-            Beautiful, fast, and privacy-focused utilities for developers. Works 100% offline
-            with zero data collection.
+            Beautiful, fast, and privacy-focused utilities for developers. Works 100% offline with
+            zero data collection.
           </p>
 
           <div className="flex items-center justify-center gap-4 pt-4">
@@ -76,7 +76,7 @@ export default function Home() {
               Explore Tools
             </Link>
             <a
-              href="https://github.com/Harshmakadia/dev-tools-vibe"
+              href="https://github.com/Dipen-Dedania/dev-tools-vibe"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-slate-800 hover:bg-slate-700 rounded-lg font-medium transition-colors"

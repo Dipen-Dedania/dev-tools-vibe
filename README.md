@@ -4,7 +4,7 @@
 
 DevFlow is a beautiful, fast, and privacy-focused web application that consolidates 50+ essential developer tools into a single, unified platform. Built with Next.js 14, TypeScript, and Tailwind CSS, it works 100% offline with zero data collection.
 
-[![CI](https://github.com/Harshmakadia/dev-tools-vibe/actions/workflows/ci.yml/badge.svg)](https://github.com/Harshmakadia/dev-tools-vibe/actions/workflows/ci.yml)
+[![CI](https://github.com/Dipen-Dedania/dev-tools-vibe/actions/workflows/ci.yml/badge.svg)](https://github.com/Dipen-Dedania/dev-tools-vibe/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
 ## ✨ Features
@@ -31,7 +31,7 @@ DevFlow is a beautiful, fast, and privacy-focused web application that consolida
 
 ```bash
 # Clone the repository
-git clone https://github.com/Harshmakadia/dev-tools-vibe.git
+git clone https://github.com/Dipen-Dedania/dev-tools-vibe.git
 cd dev-tools-vibe
 
 # Install dependencies
@@ -89,6 +89,7 @@ dev-tools-vibe/
 ## 🎯 Available Tools
 
 ### Encoders/Decoders
+
 - Base64 Encoder/Decoder ✅
 - URL Encoder/Decoder
 - HTML Entities Encoder/Decoder
@@ -97,6 +98,7 @@ dev-tools-vibe/
 - And more...
 
 ### Formatters & Validators
+
 - JSON Formatter & Validator ✅
 - XML Formatter
 - HTML Formatter
@@ -104,6 +106,7 @@ dev-tools-vibe/
 - And more...
 
 ### Generators
+
 - UUID/GUID Generator ✅
 - Nano ID Generator
 - Hash Generator (SHA-256, SHA-512, MD5)
@@ -116,7 +119,7 @@ dev-tools-vibe/
 
 ### Deploy to Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Harshmakadia/dev-tools-vibe)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Dipen-Dedania/dev-tools-vibe)
 
 ### Manual Deployment
 
@@ -145,6 +148,7 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 ## 🙏 Acknowledgments
 
 Inspired by:
+
 - [DevUtils](https://devutils.com/) - macOS native polish
 - [DevToys](https://devtoys.app/) - Windows breadth
 - [TrueDevTools](https://truedevtools.com/) - Web accessibility

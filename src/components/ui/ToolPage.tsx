@@ -4,6 +4,7 @@ import { cn, copyToClipboard } from '@/lib/utils'
 import { Copy, Check, Info } from 'lucide-react'
 import { useState } from 'react'
 import { Button } from './Button'
+import { motion } from 'framer-motion'
 
 interface ToolPageProps {
   title: string
@@ -16,8 +17,18 @@ export function ToolPage({ title, description, children, infoContent }: ToolPage
   const [showInfo, setShowInfo] = useState(false)
 
   return (
-    <div className="max-w-6xl mx-auto">
-      <div className="mb-6">
+    <motion.div
+      className="max-w-6xl mx-auto"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+    >
+      <motion.div
+        className="mb-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.1, duration: 0.3 }}
+      >
         <h1 className="text-3xl font-bold text-slate-200 mb-2">{title}</h1>
         <div className="flex items-center gap-3">
           <p className="text-slate-400">{description}</p>
@@ -32,13 +43,25 @@ export function ToolPage({ title, description, children, infoContent }: ToolPage
           )}
         </div>
         {showInfo && infoContent && (
-          <div className="mt-4 p-4 rounded-lg bg-blue-600/10 border border-blue-600/20 text-sm text-blue-300">
+          <motion.div
+            className="mt-4 p-4 rounded-lg bg-blue-600/10 border border-blue-600/20 text-sm text-blue-300"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+          >
             {infoContent}
-          </div>
+          </motion.div>
         )}
-      </div>
-      {children}
-    </div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.3 }}
+      >
+        {children}
+      </motion.div>
+    </motion.div>
   )
 }
 
